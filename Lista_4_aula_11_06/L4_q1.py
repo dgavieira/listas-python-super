@@ -1,6 +1,7 @@
 #fatiamento da string para cálculo do primeiro dígito verificador
 cpf = "01650067224"
 cpf_slice = cpf[0:9]
+verificacao = [int(dv) for dv in cpf[9:]]
 dv = [int(dv) for dv in cpf[9:]]
 val = [int(val) for val in cpf_slice]
 
@@ -13,7 +14,6 @@ soma_primeiro_digito = sum(lista_soma)
 #cálculo do primeiro dígito verificador
 resto = soma_primeiro_digito % 11
 pdv = 11 - resto
-print(pdv)
 
 #fatiamento a string para cálculo do segundo dígito verificador
 cpf_slice_2 = cpf[0:10]
@@ -30,4 +30,9 @@ soma_segundo_digito = sum(lista_soma)
 #cálculo do segundo dígito verificador
 resto = soma_segundo_digito % 11
 sdv = 11 - resto
-print(sdv)
+
+#Comparação do cálculo com o real
+if pdv == verificacao[0] and sdv == verificacao[1]:
+    print("CPF VÁLIDO")
+else:
+    print("CPF INVÁLIDO")
