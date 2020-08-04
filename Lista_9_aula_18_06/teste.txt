@@ -1,0 +1,7 @@
+este
+arquivo
+eh
+pra
+testar
+o
+python
